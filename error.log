@@ -1,0 +1,30 @@
+[Tue Jun 07 22:14:11.655656 2022] [mpm_winnt:notice] [pid 16248:tid 332] AH00455: Apache/2.4.53 (Win64) PHP/8.1.6 configured -- resuming normal operations
+[Tue Jun 07 22:14:11.655656 2022] [mpm_winnt:notice] [pid 16248:tid 332] AH00456: Apache Lounge VS16 Server built: May  4 2022 10:41:15
+[Tue Jun 07 22:14:11.655656 2022] [core:notice] [pid 16248:tid 332] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Jun 07 22:14:11.659157 2022] [mpm_winnt:notice] [pid 16248:tid 332] AH00418: Parent: Created child process 10300
+Apache server shutdown initiated...
+pm_winnt:notice] [pid 10300:tid 344] AH00354: Child: Starting 64 worker threads.
+[Tue Jun 07 22:15:03.587959 2022] [mpm_winnt:notice] [pid 16248:tid 332] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jun 07 22:15:12.227231 2022] [mpm_winnt:notice] [pid 10300:tid 344] AH00364: Child: All worker threads have exited.
+[Tue Jun 07 22:15:52.307156 2022] [core:warn] [pid 5216:tid 348] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Jun 07 22:15:52.328165 2022] [mpm_winnt:notice] [pid 5216:tid 348] AH00455: Apache/2.4.53 (Win64) PHP/8.1.6 configured -- resuming normal operations
+[Tue Jun 07 22:15:52.328165 2022] [mpm_winnt:notice] [pid 5216:tid 348] AH00456: Apache Lounge VS16 Server built: May  4 2022 10:41:15
+[Tue Jun 07 22:15:52.328165 2022] [core:notice] [pid 5216:tid 348] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Jun 07 22:15:52.337712 2022] [mpm_winnt:notice] [pid 5216:tid 348] AH00418: Parent: Created child process 14604
+Apache server interrupted...
+022] [mpm_winnt:notice] [pid 14604:tid 368] AH00354: Child: Starting 64 worker threads.
+[Tue Jun 07 22:15:56.480763 2022] [mpm_winnt:notice] [pid 5216:tid 348] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+[Tue Jun 07 22:15:58.500996 2022] [mpm_winnt:notice] [pid 14604:tid 368] AH00364: Child: All worker threads have exited.
+[Tue Jun 07 22:15:58.526593 2022] [mpm_winnt:notice] [pid 5216:tid 348] AH00430: Parent: Child process 14604 exited successfully.
+[Tue Jun 07 22:17:01.944430 2022] [mpm_winnt:notice] [pid 4292:tid 328] AH00455: Apache/2.4.53 (Win64) PHP/8.1.6 configured -- resuming normal operations
+[Tue Jun 07 22:17:01.944430 2022] [mpm_winnt:notice] [pid 4292:tid 328] AH00456: Apache Lounge VS16 Server built: May  4 2022 10:41:15
+[Tue Jun 07 22:17:01.944430 2022] [core:notice] [pid 4292:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Jun 07 22:17:01.953519 2022] [mpm_winnt:notice] [pid 4292:tid 328] AH00418: Parent: Created child process 15464
+[Tue Jun 07 22:17:02.376275 2022] [mpm_winnt:notice] [pid 15464:tid 356] AH00354: Child: Starting 64 worker threads.
+[Tue Jun 07 22:31:13.573618 2022] [php:error] [pid 15464:tid 1172] [client ::1:51762] PHP Fatal error:  Uncaught Error: Undefined constant "f" in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php:36\nStack trace:\n#0 {main}\n  thrown in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php on line 36, referer: http://localhost/
+[Tue Jun 07 22:39:57.302583 2022] [php:error] [pid 15464:tid 1172] [client ::1:51809] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string + int in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php:60\nStack trace:\n#0 {main}\n  thrown in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php on line 60, referer: http://localhost/
+[Tue Jun 07 23:02:49.682390 2022] [php:error] [pid 15464:tid 1172] [client ::1:51922] PHP Parse error:  syntax error, unexpected token "while", expecting "," or ";" in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php on line 76, referer: http://localhost/
+[Tue Jun 07 23:06:15.258524 2022] [php:error] [pid 15464:tid 1176] [client ::1:51937] PHP Parse error:  Unmatched '}' in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php on line 88, referer: http://localhost/
+[Tue Jun 07 23:06:36.399952 2022] [php:warn] [pid 15464:tid 1172] [client ::1:51938] PHP Warning:  Uninitialized string offset 5 in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php on line 87, referer: http://localhost/
+[Tue Jun 07 23:08:50.490440 2022] [php:warn] [pid 15464:tid 1172] [client ::1:51945] PHP Warning:  foreach() argument must be of type array|object, string given in D:\\Projects\\EcoWorldWithPHP\\lab4\\index.php on line 96, referer: http://localhost/
