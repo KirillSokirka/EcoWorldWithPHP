@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/mobile-menu-page.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+</head>
+
+<body>
+    <div class="mobile-menu-page-wrapper">
+        <div class="mobile-menu-page">
+            <div class="links-area">
+                <a type='button' class="link" id="signUp-btn">Sign Up</a>
+                <a type='button' class="link" id="signIn-btn">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="signIn-modal" class="auth-modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Вітаємо знову!</p>
+            <form>
+                <input class="info-input" placeholder="Пошта">
+                <input class="info-input" placeholder="Пароль">
+
+                <button type="submit">Вхід</button>
+            </form>
+        </div>
+    
+    </div>
+
+    <div id="signUp-modal" class="auth-modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Вітаємо!</p>
+            <input class="info-input" placeholder="Пошта">
+            <input class="info-input" placeholder="Ім'я">
+            <input class="info-input" placeholder="Пароль">
+            <input class="info-input password-again" placeholder="Повторіть пароль">
+
+            <button type="submit">Зареєструватися</button>
+        </div> 
+
+    </div>
+
+</body>
+    <script src="../js/auth.js"></script>
+</html> 

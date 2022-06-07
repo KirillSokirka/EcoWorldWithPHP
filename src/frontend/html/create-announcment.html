@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWorld</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/announcment-creation.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="../../index.html"><img alt="Logo"></a>
+        </div>
+        <div class="menu">
+            <div class="authorized">
+                <div class="header">
+                    <a href="#" aria-haspopup="true">Вітаю, username</a>
+                    <img alt="Arrow" id="arrows">
+                </div>
+                <div class="content">
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a href="/create-announcment.html">Створити оголошення</a></li>
+                        <hr>
+                        <li><a href="#">Мої оголошення</a></li>
+                        <li><a href="#">Вподобані оголошення</a></li>
+                        <hr>
+                        <li><a href="#">Вихід</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="ge.html">
+                <img src="../images/menu-hambuger.svg" class="menu-button" alt="Menu">
+            </a>
+        </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="announcment-creation-wrapper">
+            <form>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Заголовок оголошення" name="name" id='name'
+                        required />
+                    <label for="name" class="form__label">Заголовок оголошення</label>
+                </div>
+                
+                <div class="form__group field">
+                    <input type="input" class="form__field big" placeholder="Опис оголошення" name="description" id="description"></textarea>
+                    <label for="name" class="form__label">Опис оголошення</label>
+                </div>       
+
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Місце прибрання" name="location" id='location'
+                        required />
+                    <label for="location" class="form__label">Місце прибрання</label>
+                </div>
+                <div class="form__group datetime field">
+                    <input type="datetime-local" class="form__field" data-date-format="dd/mm/yyyy" name="date" id='date'
+                        required />
+                </div>
+                <div class="form__group field file">
+                    <input type="file" class="file__field" placeholder="Дата та час прибрання" name="file" id='file' 
+                    data-multiple-caption="{count} files selected" multiple required />
+                    <label for="file" class="file__label" >Завантажте фото сміття</label>
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="form__btn">Розмістити оголошення</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <p>Зворотній зв'язок:</p>
+            <p class="lower-text">email: ecoworld@gmail.com</p>
+        </div>
+        <div>EcoWorld 2022</div>
+    </footer>
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../js/files.js"></script>
+
+</html>
