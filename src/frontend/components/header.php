@@ -4,20 +4,19 @@
     </div>
     <div class="menu">
         <?php
-            require ('backend/Database.php');
-        $db = Database::getInstance();
-        if (isset($db)) {
-            include('frontend/components/notauthorized-header.php');
-        } else {
+        session_start();
+        if ($_SESSION["authenticated"]) {
             include('frontend/components/authorized-header.php');
-        }
-        ?>
+        } else {
+            include('frontend/components/notauthorized-header.php');
+            include("frontend/components/auth-modals.php");
+        } ?>
     </div>
-    
     <div class="mobile-menu">
-        <a href="src/html/menu-page.html">
+        <a href="frontend/components/mobile-menu.php">
             <img class="menu-button" alt="Menu">
         </a>
     </div>
-    <?php include ("frontend/components/auth-modals.php") ?>
+
+    <script type="text/javascript" src="frontend/js/auth.js"></script>
 </header>

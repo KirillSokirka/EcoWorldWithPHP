@@ -10,14 +10,13 @@
 </head>
 
 <body>
-    <div class="mobile-menu-page-wrapper">
-        <div class="mobile-menu-page">
-            <div class="links-area">
-                <a type='button' class="link" id="signUp-btn">Sign Up</a>
-                <a type='button' class="link" id="signIn-btn">Sign In</a>
-            </div>
-        </div>
-    </div>
+<?php
+session_start();
+if ($_SESSION["authenticated"]) {
+    require ('mobile-authorized-menu.php');
+} else {
+    require ('mobile-not-authorized-menu.php');
+}
+?>
 </body>
-    <script src="../js/auth.js"></script>
-</html> 
+</html>

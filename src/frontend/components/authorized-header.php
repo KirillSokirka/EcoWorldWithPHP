@@ -1,6 +1,9 @@
 <div class="authorized">
             <div class="header">
-                <a href="#" aria-haspopup="true">Вітаю, username</a>
+                <a href="#" aria-haspopup="true">Вітаю, <?php
+                    session_start();
+                    echo $_SESSION["name"];
+                    ?></a>
                 <img alt="Arrow" id="arrows">
             </div>
             <div class="content">

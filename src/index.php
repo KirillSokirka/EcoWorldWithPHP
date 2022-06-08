@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
-<?php include('frontend/components/header.php') ?>
+
+<?php
+include('frontend/components/header.php') ?>
 <?php include('frontend/pages/main.php') ?>
 <?php include('frontend/components/footer.php') ?>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="frontend/js/auth.js"></script>
 </html>

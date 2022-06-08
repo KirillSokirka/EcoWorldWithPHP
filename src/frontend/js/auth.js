@@ -18,3 +18,22 @@ signInModal.querySelector(".close").onclick = () => {
 signUpbutton.onclick = () => {
     signUpModal.style.display = 'flex';
 };
+
+$('#form').submit(function(event) {
+    if (!matchPassword()) {
+        event.preventDefault();
+    }
+});
+
+function matchPassword() {
+    var pw1 = document.getElementById("password").value;
+    var pw2 = document.getElementById("confirmPassword").value;
+    console.log(pw2);
+    if(pw1 !== pw2)
+    {
+        alert("Passwords did not match");
+        return false;
+    } else {
+        return true;
+    }
+}
