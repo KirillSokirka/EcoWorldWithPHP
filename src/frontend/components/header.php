@@ -3,6 +3,12 @@
         <a href="index.html"><img src="images/planet-earth.svg" alt="Logo"></a>
     </div>
     <div class="menu">
+        <?php
+            require ('backend/Database.php');
+        $db = new PDO
+        ("mysql:host=localhost;port=3306;dbname=ecoworld"
+            , "root", "aa4938nr");
+        ?>
         <!-- <div class="not-authorized">
             <a type='button' id="signIn-btn">Sign In</a>
             <a type='button' id="signUp-btn">Sign Up</a>
