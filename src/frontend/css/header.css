@@ -14,7 +14,7 @@
 .header .logo img {
     max-width: 40px;
     max-height: 40px;
-    content: url('../images/planet-earth.svg ');
+    content: url("../../frontend/images/planet-earth.svg");
 }
 
 .header .menu {
@@ -30,6 +30,7 @@
 
 .not-authorized a {
     margin-right: 0.5em;
+    cursor: pointer;
 }
 
 .header .menu .authorized a {
@@ -51,12 +52,13 @@
     margin-right: 0;
     max-width: 20px;
     max-height: 20px;
-    content: url("../images/double-down.png");
+    content: url("../../frontend/images/double-down.png");
 }
 
 .header .menu .authorized ul a {
     font-size: 14px;
     color: rgba(18, 13, 13, 0.75);
+    cursor: pointer;
 }
 
 .header .menu .authorized ul {
@@ -137,7 +139,7 @@ header .menu .authorized li {
 .header .mobile-menu .menu-button {
     max-width: 80%;
     max-height: 80%;
-    content: url('../images/menu-hambuger.svg');
+    content: url('../../frontend/images/menu-hambuger.svg');
 }
 
 @media screen and (max-width: 600px) {
