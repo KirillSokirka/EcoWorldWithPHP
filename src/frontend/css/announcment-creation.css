@@ -10,7 +10,7 @@
   background-color: rgba(147, 209, 191, 0.15);
 }
 
-.announcment-creation-wrapper form {
+.announcment-creation-wrapper .form {
   display: flex;
   flex-direction: column;
   margin-top: 2em;

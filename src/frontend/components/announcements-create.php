@@ -1,6 +1,5 @@
-<link rel="stylesheet" src="../css/announcment-creation.css">
-
-    <form>
+<div class="announcment-creation-wrapper">
+    <div class="form">
         <div class="form__group field">
             <input type="input" class="form__field" placeholder="Заголовок оголошення" name="name" id='name'
                    required />
@@ -29,5 +28,6 @@
         <div class="form__group">
             <button type="submit" class="form__btn">Розмістити оголошення</button>
         </div>
-    </form>
+    </div>
+</div>
     <script src="frontend/js/files.js"></script>

@@ -13,7 +13,7 @@
                     <li><a href="#">Мої оголошення</a></li>
                     <li><a href="#">Вподобані оголошення</a></li>
                     <hr>
-                    <li><a href="#">Вихід</a></li>
+                    <li><a href="backend/auth/exit.php">Вихід</a></li>
                 </ul>
             </div>
 </div>
