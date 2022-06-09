@@ -8,16 +8,15 @@
                 include('frontend/components/announcements-area.php');
                 break;
             case "create":
-                include("frontend/components/announcements-create.php");
+                include ('frontend/components/announcements-create.php');
                 break;
             case "info":
                 include("frontend/components/announcements-info.php");
                 break;
         }
     }
-
     if($_GET['page']){
-    $page = $_GET['page'];
+        $page = $_GET['page'];
     PageBuilder($page);
     } else {
         PageBuilder('home');

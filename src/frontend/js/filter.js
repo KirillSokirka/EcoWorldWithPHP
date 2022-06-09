@@ -1,4 +1,4 @@
-const wrapper = document.querySelector(".wrapper"),
+const wrapper = document.querySelector(".filter-wrapper"),
 selectBtn = wrapper.querySelector(".select-btn"),
 searchInp = wrapper.querySelector("input"),
 options = wrapper.querySelector(".options");

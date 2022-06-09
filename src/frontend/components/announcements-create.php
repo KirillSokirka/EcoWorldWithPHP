@@ -1,4 +1,5 @@
-<div class="announcment-creation-wrapper">
+<link rel="stylesheet" src="../css/announcment-creation.css">
+
     <form>
         <div class="form__group field">
             <input type="input" class="form__field" placeholder="Заголовок оголошення" name="name" id='name'

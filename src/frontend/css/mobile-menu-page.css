@@ -60,7 +60,7 @@
     font-family: 'Comfortaa', sans-serif;
 }
 
-.filters .wrapper {
+.filters .filter-wrapper {
     border: 0.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     color: rgba(126, 120, 120, 1);
@@ -90,7 +90,7 @@ li {
     transition: transform 0.3s linear;
 }
 
-.filters .wrapper.active .select-btn i {
+.filters .filter-wrapper.active .select-btn i {
     transform: rotate(-180deg);
 }
 
@@ -102,7 +102,7 @@ li {
     border-radius: 5px;
 }
 
-.filters .wrapper.active .content {
+.filters .filter-wrapper.active .content {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -194,7 +194,7 @@ li.selected {
         padding: 0.5em 7em 0.5em 1em;
     }
 
-    .filters .wrapper {
+    .filters .filter-wrapper {
         margin: 0.7em 0.9em 0em;
     }
     
@@ -211,7 +211,7 @@ li.selected {
 
     }
 
-    .filters .wrapper.active .content {
+    .filters .filter-wrapper.active .content {
         width: 75%;
     }    
 
@@ -232,7 +232,7 @@ li.selected {
         padding: 0.5em 6.25em 0.5em 1em;
     }
 
-    .filters .wrapper {
+    .filters .filter-wrapper {
         margin: 0.5em 1.5em 0em;
     }
     
@@ -249,7 +249,7 @@ li.selected {
 
     }
 
-    .filters .wrapper.active .content {
+    .filters .filter-wrapper.active .content {
         width: 78%;
     }    
 
@@ -271,7 +271,7 @@ li.selected {
         font-size: 17px;
     }
 
-    .filters .wrapper.active .content {
+    .filters .filter-wrapper.active .content {
         width: 75%;
     }    
 

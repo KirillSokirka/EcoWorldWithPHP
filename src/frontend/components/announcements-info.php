@@ -1,6 +1,4 @@
-
-
-<div class="wrapper">
+<div class="announcement-info-wrapper">
     <div class="wrapper__info__content">
         <div class="title">
             Допоможіть прибрати набережну
@@ -78,4 +76,5 @@
             prevEl: '.swiper-button-prev',
         },
     });
+    console.log(swiper);
 </script>

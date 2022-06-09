@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
-
-<?php
-include('frontend/components/header.php') ?>
+<?php include('frontend/components/header.php') ?>
 <?php include('frontend/pages/main.php') ?>
 <?php include('frontend/components/footer.php') ?>
 </body>

@@ -4,7 +4,7 @@
         <input class="adress-search" placeholder="Адреса місця">
     </form>
 
-    <div class="wrapper">
+    <div class="filter-wrapper">
         <div class="select-btn">
             <span>За містом</span>
             <i class="uil uil-angle-down"></i>
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="wrapper">
+    <div class="filter-wrapper">
         <div class="select-btn">
             <span>За датою</span>
             <i class="uil uil-angle-down"></i>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="wrapper">
+    <div class="filter-wrapper">
         <div class="select-btn">
             <span>За популярністю</span>
             <i class="uil uil-angle-down"></i>
