@@ -3,6 +3,7 @@ const signInbutton = document.querySelector("#signIn-btn"),
     signInModal = document.querySelector("#signIn-modal"),
     signUpModal = document.querySelector("#signUp-modal");
 
+console.log('bebra');
 if (signUpModal !== null && signInModal !== null) {
     signUpModal.querySelector(".close").onclick = () => {
         signUpModal.style.display = "none";
@@ -28,8 +29,10 @@ if (signUpModal !== null && signInModal !== null) {
 }
 
 function matchPassword() {
-    var pw1 = document.getElementById("password").value;
-    var pw2 = document.getElementById("confirmPassword").value;
+    var pw1 = signUpModal.getElementById("password").value;
+    var pw2 = signUpModal.getElementById("confirmPassword").value;
+    console.log(pw1);
+    console.log(pw2);
     if(pw1 !== pw2)
     {
         alert("Passwords did not match");

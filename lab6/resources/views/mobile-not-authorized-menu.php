@@ -8,6 +8,6 @@
 </div>
 
 <?php
-    require ('auth-modals.php')
+require('auth-modals.blade.php')
 ?>
 <script src="../../public/js/auth.js"></script>

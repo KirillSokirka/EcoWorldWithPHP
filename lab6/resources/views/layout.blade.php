@@ -19,7 +19,7 @@
         @auth
         <div class="authorized">
             <div class="header">
-                <a href="#" aria-haspopup="true">Вітаю</a>
+                <a href="#" aria-haspopup="true">Вітаю, {{auth()->user()->username}}</a>
                 <img alt="Arrow" id="arrows">
             </div>
             <div class="content">
@@ -39,7 +39,8 @@
                 <a type='button' id="signUp-btn">Sign Up</a>
             </div>
 
-            <?php require ('../resources/views/auth-modals.php') ?>
+            @include('auth.register')
+            @include('auth.login')
         @endauth
     </div>
     <div class="mobile-menu">
@@ -59,5 +60,6 @@
     <div>EcoWorld 2022</div>
 </footer>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/auth.js') }}"></script>
 </html>

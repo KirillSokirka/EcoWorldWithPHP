@@ -21,8 +21,7 @@
             @elseguest
                 <a type='button' class="link" id="signIn-btn">Увійти</a>
                 <a type='button' class="link" id="signUp-btn">Зареєструватися</a>
-
-                <?php require ('../resources/views/auth-modals.php') ?>
+                <?php require ('../resources/views/auth-modals.blade.php') ?>
             @endauth
         </div>
     </div>
