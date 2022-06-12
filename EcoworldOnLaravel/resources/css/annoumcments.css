@@ -13,7 +13,7 @@
     margin-top: 0.5em;
     padding: 0.5em 0.5em;
     align-self: flex-start;
-    
+
     border: 0px;
     border-radius: 5px;
     font-family: 'Comfortaa', sans-serif;
@@ -66,7 +66,7 @@
     max-height: 25px;
     position: absolute;
     margin-top: 0.7em;
-    content: url("../images/heart.svg");
+    content: url("../resources/images/heart.svg");
 }
 
 .image-part .person-info {
@@ -119,7 +119,7 @@
 }
 
 @media screen and (max-width: 1920px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 330px;
         height: 415px;
@@ -128,11 +128,11 @@
     .info-part .title {
         font-size: 1.5em;
     }
-    
+
     .info-part .location-info {
         font-size: 1.375em;
     }
-    
+
     .info-part .date-info {
         font-size: 1.375em;
     }
@@ -144,11 +144,11 @@
     .annoumcments-area .show-more-btn {
         font-size: 1.2em;
     }
-  
+
 }
 
 @media screen and (max-width: 1675px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 290px;
         height: 375px;
@@ -157,11 +157,11 @@
     .info-part .title {
         font-size: 1.3em;
     }
-    
+
     .info-part .location-info {
         font-size: 1.125em;
     }
-    
+
     .info-part .date-info {
         font-size: 1.125em;
     }
@@ -176,7 +176,7 @@
 }
 
 @media screen and (max-width: 1550px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 275px;
         height: 360px;
@@ -185,11 +185,11 @@
     .info-part .title {
         font-size: 1.3em;
     }
-    
+
     .info-part .location-info {
         font-size: 1.125em;
     }
-    
+
     .info-part .date-info {
         font-size: 1.125em;
     }
@@ -206,7 +206,7 @@
 
 
 @media screen and (max-width: 1450px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 255px;
         height: 340px;
@@ -215,11 +215,11 @@
     .info-part .title {
         font-size: 1.3em;
     }
-    
+
     .info-part .location-info {
         font-size: 1.1em;
     }
-    
+
     .info-part .date-info {
         font-size: 1.1em;
     }
@@ -230,7 +230,7 @@
 }
 
 @media screen and (max-width: 1400px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 255px;
         height: 340px;
@@ -239,18 +239,18 @@
     .info-part .title {
         font-size: 1.2em;
     }
-    
+
     .info-part .location-info {
         font-size: 1em;
     }
-    
+
     .info-part .date-info {
         font-size: 1em;
     }
 }
 
 @media screen and (max-width: 1300px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 235px;
         height: 320px;
@@ -259,18 +259,18 @@
     .info-part .title {
         font-size: 1.2em;
     }
-    
+
     .info-part .location-info {
         font-size: 1em;
     }
-    
+
     .info-part .date-info {
         font-size: 1em;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 220px;
         height: 305px;
@@ -279,18 +279,18 @@
     .info-part .title {
         font-size: 1.1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.95em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.95em;
     }
 }
 
 @media screen and (max-width: 1160px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 205px;
         height: 290px;
@@ -299,11 +299,11 @@
     .info-part .title {
         font-size: 1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.9em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.9em;
     }
@@ -314,7 +314,7 @@
 }
 
 @media screen and (max-width: 1100px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 210px;
         height: 295px;
@@ -323,18 +323,18 @@
     .info-part .title {
         font-size: 1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.8em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.8em;
     }
 }
 
 @media screen and (max-width: 900px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 210px;
         height: 295px;
@@ -343,18 +343,18 @@
     .info-part .title {
         font-size: 1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.8em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.8em;
     }
 }
 
 @media screen and (max-width: 800px) {
-    
+
     .annoumcment-row .annoumcment-block {
         width: 210px;
         height: 310px;
@@ -363,11 +363,11 @@
     .info-part .title {
         font-size: 1.1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.94em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.94em;
     }
@@ -383,11 +383,11 @@
     .info-part .title {
         font-size: 1.1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.925em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.925em;
     }
@@ -403,11 +403,11 @@
     .info-part .title {
         font-size: 1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.83em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.83em;
     }
@@ -422,11 +422,11 @@
     .info-part .title {
         font-size: 1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.82em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.82em;
     }
@@ -441,11 +441,11 @@
     .info-part .title {
         font-size: 1.05em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.92em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.92em;
     }
@@ -460,11 +460,11 @@
     .info-part .title {
         font-size: 1.1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.95em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.95em;
     }
@@ -483,11 +483,11 @@
     .info-part .title {
         font-size: 1.1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.9em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.9em;
     }
@@ -502,11 +502,11 @@
     .info-part .title {
         font-size: 1em;
     }
-    
+
     .info-part .location-info {
         font-size: 0.85em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.85em;
     }
@@ -525,11 +525,11 @@
     .info-part .title {
         font-size: 0.9em;
     }
-    
+
     .info-part .location-info {
-        font-size: 0.8em;    
+        font-size: 0.8em;
     }
-    
+
     .info-part .date-info {
         font-size: 0.8em;
     }

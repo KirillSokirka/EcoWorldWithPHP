@@ -22,3 +22,4 @@ Route::get('/home/mobile', function () {
 });
 
 Route::get('/announcements', [AnnouncementController::class, 'index']);
+Route::get('/announcements/{id}', [AnnouncementController::class, 'show']);

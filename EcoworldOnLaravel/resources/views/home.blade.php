@@ -63,9 +63,9 @@
         <div class="more-filters"><a href="src/html/mobile-filters.html">Ще фільтри</a></div>
     </div>
 
-    {{--<div class="annoumcments-area">
+    <div class="annoumcments-area">
         <button class="show-more-btn">Показати більше</button>
     </div>
 
-    <script type="text/javascript" src="../resources/js/announcements-area.js"></script>--}}
+    <script type="text/javascript" src="../resources/js/announcements-area.js"></script>
 @endsection

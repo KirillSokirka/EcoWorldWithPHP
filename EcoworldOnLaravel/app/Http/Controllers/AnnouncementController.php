@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Repositories\Abstract\IAnnouncementRepository;
 use App\Repositories\AnnouncementRepository;
 use Illuminate\Routing\Controller as BaseController;
-use function Symfony\Component\Translation\t;
 
 class AnnouncementController extends BaseController
 {
@@ -19,5 +18,10 @@ class AnnouncementController extends BaseController
     public function index()
     {
         return $this->repository->GetAll();
+    }
+
+    public function show($id) {
+        $item = $this->repository->Get($id);
+        return view('show', compact('item'));
     }
 }

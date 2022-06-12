@@ -6,18 +6,10 @@
 
     <title>EcoWorld</title>
     <!DOCTYPE html>
-    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <script>
-        axios.get('/EcoWorldWithPHP/EcoworldOnLaravel/public/announcements')
-            .then(responce => {
-                console.log(responce);
-            }).catch(error => {
-            console.error(error)
-        });
-    </script>
 </head>
 <body>
 <header class="header">
@@ -69,6 +61,6 @@
     </div>
     <div>EcoWorld 2022</div>
 </footer>
-<script type="text/javascript" src="../resources/js/auth.js"></script>
+<script type="text/javascript" src={{ asset('../resources/css/style.css') }}></script>
 </body>
 </html>

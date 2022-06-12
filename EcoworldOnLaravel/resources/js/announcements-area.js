@@ -1,29 +1,54 @@
 const area = document.querySelector(".annoumcments-area"),
     button = area.querySelector(".show-more-btn");
 
-axios.get('/EcoWorldWithPHP/EcoworldOnLaravel/public/announcements')
-    .then(responce => {
-       console.log(responce);
-    }).catch(error => {
-        console.error(error)
-});
 
-function configureAnnouncementsOnScreen(size) {
+const placeAnnouncements = async () => {
+
+    let data = [];
+    try {
+        data = await axios.get('/EcoWorldWithPHP/EcoworldOnLaravel/public/announcements')
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+    let rows = []
+
+    if (window.innerWidth <= 550) {
+        rows = configureAnnouncementsOnScreen(2, data.data);
+    } else if (window.innerWidth > 550 && window.innerWidth <= 800) {
+        rows = configureAnnouncementsOnScreen(3, data.data);
+    } else {
+        rows = configureAnnouncementsOnScreen(4, data.data);
+    }
+
+    const elements = area.querySelectorAll(".annoumcment-row");
+    elements.forEach(element => element.remove())
+    rows.reverse().forEach(row => {
+        area.insertAdjacentHTML('afterbegin', row);
+    })
+
+    let nonDisplayedRows = selectNonDisplayedRows();
+    if (nonDisplayedRows.length !== 0) {
+        button.style.display = 'flex';
+    }
+}
+
+function configureAnnouncementsOnScreen(size, announcements) {
     let rows = [];
     let count = 0, rowCount = 0;
-
     announcements.forEach(item => {
 
-        if (count == 0) {
+        if (count === 0) {
             rows[rowCount] = ["<div class='annoumcment-row'>"];
-        } else if ((count % size) == 0) {
+        } else if ((count % size) === 0) {
             rows[rowCount] += "</div>";
             rows[++rowCount] = "<div class='annoumcment-row'>";
         }
-
         rows[rowCount] += ` <div class="annoumcment-block">
                                 <div class="image-part">
-                                    <a href=${item.link}><img src=${item.image}></a>
+                                    <a href='announcements/${item.id}' >
+                                    <img src='../resources/images/${item.imagesUrl[0]}'></a>
                                     <img class="heart-image">
                                     <div class="person-info">
                                         <p>${item.personCount}</p>
@@ -32,49 +57,20 @@ function configureAnnouncementsOnScreen(size) {
                                 </div>
                                 <div class="info-part">
                                     <p class="title">${item.title}</p>
-                                    <p class="location-info">локація: ${item.locationInfo}</p>
-                                    <p class="date-info">дата: ${item.dateInfo}</p>
+                                    <p class="location-info">локація: ${item.location}</p>
+                                    <p class="date-info">дата: ${item.date}</p>
                                 </div>
                             </div>`;
         count++;
 
-        if (count == announcements.length) {
+        if (count === announcements.length) {
             rows[rowCount] += "</div>";
         }
     });
-
-    return rows
-}
-
-function placeAnnouncements() {
-    let rows = []
-
-    if (window.innerWidth <= 550) {
-        rows = configureAnnouncementsOnScreen(2);
-    } else if (window.innerWidth > 550 && window.innerWidth <= 800) {
-        rows = configureAnnouncementsOnScreen(3);
-    }
-    else {
-        rows = configureAnnouncementsOnScreen(4);
-    }
-
-    var elements = area.querySelectorAll(".annoumcment-row")
-    elements.forEach(element => element.remove())
-
-    rows.reverse().forEach(row => {
-        area.insertAdjacentHTML('afterbegin', row);
-    })
-
-    rows = [];
-
-    var nonDisplayedRows = selectNonDisplayedRows();
-    if (nonDisplayedRows.length != 0) {
-        button.style.display = 'flex';
-    }
+    return rows;
 }
 
 window.addEventListener('resize', placeAnnouncements);
-
 placeAnnouncements();
 
 function selectNonDisplayedRows() {
@@ -102,48 +98,3 @@ button.addEventListener('click', () => {
         button.style.display = 'none';
     }
 });
-
-/*
-let announcements = [
-    {
-        title: 'Зробимо дворик більш затишним!!!',
-        personCount: 12,
-        locationInfo: 'м. Васильків, вул Покровська 29',
-        dateInfo: '22.04.2022 15:00',
-        image: 'frontend/images/place-image1.png',
-        link: '#'
-    },
-    {
-        title: 'Допоможіть прибрати набережну',
-        personCount: 12,
-        locationInfo: 'м. Васильків, вул Зарічна',
-        dateInfo: '20.05.2022 11:00',
-        image: 'frontend/images/rubbish-images.jpeg',
-        link: 'src/html/announcement-info.html'
-    },
-    {
-        title: 'Пошук людей для прибирання',
-        personCount: 12,
-        locationInfo: 'м. Васильків, вул Декабристів 88',
-        dateInfo: '19.04.2022 14:30',
-        image: 'frontend/images/place-image1.png',
-        link: '#'
-    },
-    {
-        title: 'Допоможіть прибрати набережну',
-        personCount: 12,
-        locationInfo: 'м. Васильків, вул Покровська 29',
-        dateInfo: '19.04.2022 14:30',
-        image: 'frontend/images/place-image1.png',
-        link: '#'
-    },
-    {
-        title: 'Пошук людей для прибирання',
-        personCount: 12,
-        locationInfo: 'м. Васильків, вул Зарічна',
-        dateInfo: '22.04.2022 15:00',
-        image: 'frontend/images/place-image1.png',
-        link: '#'
-    },
-]
-*/
