@@ -48,7 +48,7 @@ function configureAnnouncementsOnScreen(size, announcements) {
         rows[rowCount] += ` <div class="annoumcment-block">
                                 <div class="image-part">
                                     <a href='announcements/${item.id}' >
-                                    <img src='../resources/images/${item.imagesUrl[0]}'></a>
+                                    <img src='images/${item.imagesUrl[0]}'></a>
                                     <img class="heart-image">
                                     <div class="person-info">
                                         <p>${item.personCount}</p>

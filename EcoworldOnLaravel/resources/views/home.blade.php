@@ -66,6 +66,6 @@
     <div class="annoumcments-area">
         <button class="show-more-btn">Показати більше</button>
     </div>
-
-    <script type="text/javascript" src="../resources/js/announcements-area.js"></script>
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/announcements-area.js"></script>
 @endsection

@@ -6,15 +6,14 @@
 
     <title>EcoWorld</title>
     <!DOCTYPE html>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
 <header class="header">
     <div class="logo">
-        <a href="index.php"><img alt="Logo"></a>
+        <a href="{{ asset('/home') }}"><img alt="Logo"></a>
     </div>
     <div class="menu">
         @auth
@@ -40,9 +39,7 @@
                 <a type='button' id="signUp-btn">Sign Up</a>
             </div>
 
-            <?php
-            require ('../resources/views/auth-modals.php')
-            ?>
+            <?php require ('../resources/views/auth-modals.php') ?>
         @endauth
     </div>
     <div class="mobile-menu">
@@ -61,6 +58,6 @@
     </div>
     <div>EcoWorld 2022</div>
 </footer>
-<script type="text/javascript" src={{ asset('../resources/css/style.css') }}></script>
 </body>
+<script type="text/javascript" src="{{ asset('js/auth.js') }}"></script>
 </html>

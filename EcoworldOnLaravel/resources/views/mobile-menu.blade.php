@@ -6,7 +6,7 @@
 
     <title>EcoWorld</title>
     <!DOCTYPE html>
-    <link rel="stylesheet" href="../../resources/css/style.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -21,11 +21,13 @@
             @elseguest
                 <a type='button' class="link" id="signIn-btn">Увійти</a>
                 <a type='button' class="link" id="signUp-btn">Зареєструватися</a>
+
+                <?php require ('../resources/views/auth-modals.php') ?>
             @endauth
         </div>
     </div>
 </div>
 </body>
-<script type="text/javascript" src="../../resources/js/auth.js"></script>
+<script type="text/javascript" src="{{ asset('js/auth.js') }}"></script>
 </html>
 

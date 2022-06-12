@@ -66,7 +66,7 @@
     max-height: 25px;
     position: absolute;
     margin-top: 0.7em;
-    content: url("../resources/images/heart.svg");
+    content: url("../images/heart.svg");
 }
 
 .image-part .person-info {

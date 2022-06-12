@@ -10,4 +10,4 @@
 <?php
     require ('auth-modals.php')
 ?>
-<script src="../js/auth.js"></script>
+<script src="../../public/js/auth.js"></script>

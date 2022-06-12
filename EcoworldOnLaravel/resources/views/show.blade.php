@@ -1,7 +1,10 @@
-
 @extends('layout')
 
 @section('container')
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 <div class="announcement-info-wrapper">
     <div class="wrapper__info__content">
         <div class="title">
@@ -30,14 +33,14 @@
         </div>
     </div>
 
-    <div class="info__description">
+    <div class="info__description" id="desc__small_screen">
         <div class="desc__header">
             <p class="desc__header__title">Опис</p>
             <img class="desc__header__img">
         </div>
         <div class="desc__content" id="desc_content" style="display: none;">
             <div class="desc__content__text">
-               {{$item->description}}
+                {{$item->description}}
             </div>
             <div class="desc__content__author">
                 Автор оголошення: Олена
@@ -46,23 +49,51 @@
         <hr class="hr" />
     </div>
 
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            @foreach ($item->imagesUrl as $image)
-                <div class="swiper-slide">
-                    <img src={{$image}}>
-                </div>
-            @endforeach
+    <div class="big__screen_grid">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                @foreach ($item->imagesUrl as $image)
+                    <div class="swiper-slide">
+                        <img src={{ asset('/images/' . $image)}}>
+                    </div>
+                @endforeach
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+       <div class="info__description" id="desc__big_screen">
+            <div class="desc__header">
+                <p class="desc__header__title">Опис</p>
+                <img class="desc__header__img">
+            </div>
+            <div class="desc__content" id="desc_content_big" style="display: none;">
+                <div class="desc__content__text">
+                    {{$item->description}}
+                </div>
+                <div class="desc__content__author">
+                    Автор оголошення: Олена
+                </div>
+            </div>
+            <hr class="hr" />
+        </div>
     </div>
 
-    <div class="buttons" class="btn__small_screen">
+    <div class="buttons"  id="btn__small_screen">
         <button class="apply__btn">Відгукнутися</button>
         <a type="button"><img class="like__image" src="../images/heart.svg"></a>
     </div>
 
 </div>
+<script src="../js/announcment-info.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+    const swiper = new Swiper('.swiper', {
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 @endsection
 
