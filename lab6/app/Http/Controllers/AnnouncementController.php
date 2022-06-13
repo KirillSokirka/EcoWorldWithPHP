@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Abstract\IAnnouncementRepository;
 use App\Repositories\AnnouncementRepository;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends BaseController
 {
@@ -25,7 +26,23 @@ class AnnouncementController extends BaseController
         return view('show', compact('item'));
     }
 
+    public function create()
+    {
+        if (Auth::check())
+            return view('create');
+        else
+            return redirect('/home');
+    }
+
+    public function store()
+    {
+
+    }
+
     public function myAnnouncements()
     {
+
     }
+
+
 }

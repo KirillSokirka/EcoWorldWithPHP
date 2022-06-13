@@ -14,7 +14,7 @@
     <div class="mobile-menu-page">
         <div class="links-area">
             @auth
-                <a type='button' class="link">Створити</a>
+                <a type='button' href="{{ route('create.perform') }}" class="link">Створити</a>
                 <a type='button' class="link">Вподобані</a>
                 <a type='button' href="{{ route('logout.perform') }}" class="link">Вийти</a>
             @elseguest

@@ -1,3 +1,6 @@
+@extends('layout')
+
+@section('container')
 <div class="announcment-creation-wrapper">
     <div class="form">
         <div class="form__group field">
@@ -30,4 +33,5 @@
         </div>
     </div>
 </div>
-    <script src="frontend/js/files.js"></script>
+<script src="frontend/js/files.js"></script>
+@endsection

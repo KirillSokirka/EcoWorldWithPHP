@@ -24,7 +24,7 @@
             </div>
             <div class="content">
                 <ul class="dropdown" aria-label="submenu">
-                    <li><a href="src/html/create-announcment.html">Створити оголошення</a></li>
+                    <li><a href="{{ route('create.perform') }}">Створити оголошення</a></li>
                     <hr>
                     <li><a href="{{ route('myAnnouncements') }}">Мої оголошення</a></li>
                     <li><a href="#">Вподобані оголошення</a></li>

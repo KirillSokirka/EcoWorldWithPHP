@@ -13,14 +13,6 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/home/mobile', function () {
-    return view('mobile-menu');
-});
-
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
     Route::group(['middleware' => ['guest']], function () {
@@ -30,18 +22,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
-
-        Route::get('/announcements', [AnnouncementController::class, 'index']);
-        Route::get('/announcements/{id}', [AnnouncementController::class, 'show']);
     });
 
     Route::group(['middleware' => ['auth']], function () {
         Route::get('/logout', "LogoutController@perform")->name('logout.perform');
-
-        Route::get('/my-announcements', "AnnouncementController@myAnnouncements")
-            ->name('myAnnouncements');
-
-        Route::get('/my-announcements', "AnnouncementController@myAnnouncements")
-            ->name('myAnnouncements');
     });
 });
+
+Route::get('/', function () { return view('home'); });
+Route::get('/mobile', function () { return view('mobile-menu'); });
+Route::get('/announcements', [AnnouncementController::class, 'index']);
+Route::get('/announcements/create/', [AnnouncementController::class, 'create'])->name('create.perform');
+Route::post('/announcements/store/', [AnnouncementController::class, 'store'])->name('store.perform');
+Route::get('/announcements/{id}', [AnnouncementController::class, 'show'])->name('show.perform');
+Route::get('/my-announcements', [AnnouncementController::class, 'myAnnouncements'])->name('myAnnouncements');
