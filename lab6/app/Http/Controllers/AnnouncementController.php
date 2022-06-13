@@ -24,4 +24,8 @@ class AnnouncementController extends BaseController
         $item = $this->repository->Get($id);
         return view('show', compact('item'));
     }
+
+    public function myAnnouncements()
+    {
+    }
 }
