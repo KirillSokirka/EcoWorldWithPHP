@@ -78,32 +78,41 @@
 }
 
 @media screen and (max-width : 2000px) {
-   
+
     .modal-content {
-        width: 50em;
+        width: 30em;
+        height: 30em;
+    }
+}
+
+@media screen and (max-width : 1500px) {
+
+    .modal-content {
+        width: 30em;
+        height: 30em;
     }
 }
 
 @media screen and (max-width : 1000px) {
-   
+
     .modal-content {
-        width: 40em;
+        width: 30em;
     }
 }
 
 @media screen and (max-width : 750px) {
-   
+
     .modal-content {
         width: 70%;
     }
 }
 
 @media screen and (max-width : 430px) {
-   
+
     .modal-content {
         width: 70%;
     }
-    
+
     .modal-content input {
         font-size: 1em;
     }

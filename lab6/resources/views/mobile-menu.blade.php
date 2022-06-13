@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>EcoWorld</title>
     <!DOCTYPE html>
     <link rel="stylesheet" href="../../public/css/style.css">
@@ -17,11 +16,12 @@
             @auth
                 <a type='button' class="link">Створити</a>
                 <a type='button' class="link">Вподобані</a>
-                <a type='button' href="backend/auth/exit.php" class="link">Вийти</a>
+                <a type='button' href="{{ route('logout.perform') }}" class="link">Вийти</a>
             @elseguest
                 <a type='button' class="link" id="signIn-btn">Увійти</a>
                 <a type='button' class="link" id="signUp-btn">Зареєструватися</a>
-                <?php require ('../resources/views/auth-modals.blade.php') ?>
+                @include('auth.register')
+                @include('auth.login')
             @endauth
         </div>
     </div>

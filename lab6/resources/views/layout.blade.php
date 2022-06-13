@@ -29,7 +29,7 @@
                     <li><a href="#">Мої оголошення</a></li>
                     <li><a href="#">Вподобані оголошення</a></li>
                     <hr>
-                    <li><a href="backend/auth/exit.php">Вихід</a></li>
+                    <li><a href="{{ route('logout.perform') }}">Вихід</a></li>
                 </ul>
             </div>
         </div>

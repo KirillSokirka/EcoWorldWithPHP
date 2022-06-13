@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
 /*
@@ -13,6 +12,14 @@ use App\Http\Controllers\AnnouncementController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/home/mobile', function () {
+    return view('mobile-menu');
+});
 
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
@@ -27,14 +34,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
         Route::get('/announcements', [AnnouncementController::class, 'index']);
         Route::get('/announcements/{id}', [AnnouncementController::class, 'show']);
+    });
+
+    Route::group(['middleware' => ['auth']], function () {
+        Route::get('/logout', "LogoutController@perform")->name('logout.perform');
 
     });
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/home/mobile', function () {
-    return view('mobile-menu');
 });
