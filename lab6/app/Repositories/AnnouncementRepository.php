@@ -3,17 +3,17 @@
 namespace App\Repositories;
 
 use App\Models\Announcement;
+use App\Models\Announcement as AnnouncementAlias;
 use App\Repositories\Abstract\IAnnouncementRepository;
 
 class AnnouncementRepository implements IAnnouncementRepository
 {
-
-    public function GetAll(): array
+    public function GetAll()
     {
-        return $this->announcements;
+        return Announcement::with('images')->get();
     }
 
-    public function Get(int $id): Announcement
+    public function Get(int $id): AnnouncementAlias
     {
         $element = null;
         foreach ($this->announcements as $a) {
@@ -25,12 +25,12 @@ class AnnouncementRepository implements IAnnouncementRepository
         return $element;
     }
 
-    public function Create(Announcement $item)
+    public function Create(AnnouncementAlias $item)
     {
         // TODO: Implement Create() method.
     }
 
-    public function Update(Announcement $item)
+    public function Update(AnnouncementAlias $item)
     {
         // TODO: Implement Update() method.
     }

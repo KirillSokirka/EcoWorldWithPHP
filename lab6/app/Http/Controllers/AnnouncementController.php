@@ -18,7 +18,9 @@ class AnnouncementController extends BaseController
 
     public function index()
     {
-        return $this->repository->GetAll();
+        return response()->json([
+            'data' => $this->repository->GetAll()
+        ]);
     }
 
     public function show($id) {

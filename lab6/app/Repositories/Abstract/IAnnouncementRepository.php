@@ -6,7 +6,7 @@ use App\Models\Announcement;
 
 interface IAnnouncementRepository
 {
-    public function GetAll() : array;
+    public function GetAll();
     public function Get(int $id) : Announcement;
     public function Create(Announcement $item);
     public function Update(Announcement $item);

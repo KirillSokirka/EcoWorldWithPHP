@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Announcement extends Model
 {
-    use HasFactory;
-
     public function images()
     {
-        return $this->hasMany('App\Image');
+        return $this->hasMany(Image::class, 'announcement_id', 'id');
     }
 }

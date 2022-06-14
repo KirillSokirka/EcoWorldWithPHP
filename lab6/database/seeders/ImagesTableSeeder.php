@@ -14,14 +14,14 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('image')->insert([
-            'announcement_id' => 0,
+        \DB::table('images')->insert([
+            'announcement_id' => 1,
             'url' => 'poluted-river.png',
             'created_at' => NOW(),
             'updated_at' => NOW()
         ]);
-        \DB::table('image')->insert([
-            'announcement_id' => 0,
+        \DB::table('images')->insert([
+            'announcement_id' => 1,
             'url' => 'poluted-river.png',
             'created_at' => NOW(),
             'updated_at' => NOW()
