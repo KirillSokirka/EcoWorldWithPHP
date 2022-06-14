@@ -13,7 +13,7 @@
 <body>
 <header class="header">
     <div class="logo">
-        <a href="{{ asset('/home') }}"><img alt="Logo"></a>
+        <a href="{{ asset('/') }}"><img alt="Logo"></a>
     </div>
     <div class="menu">
         @auth

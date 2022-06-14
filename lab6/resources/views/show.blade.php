@@ -24,7 +24,7 @@
 
         <div class="info">
             <label class="label" for="people">Вже відгукнулося:</label>
-            <p class="info__text" id="people">{{$item->personCount}} небайдужих</p>
+            <p class="info__text" id="people">{{$item->likeCount}} небайдужих</p>
         </div>
 
         <div class="buttons" id="btn__big_screen">
@@ -43,7 +43,7 @@
                 {{$item->description}}
             </div>
             <div class="desc__content__author">
-                Автор оголошення: Олена
+                Автор оголошення: {{$item->author}}
             </div>
         </div>
         <hr class="hr" />
@@ -52,7 +52,7 @@
     <div class="big__screen_grid">
         <div class="swiper">
             <div class="swiper-wrapper">
-                @foreach ($item->imagesUrl as $image)
+                @foreach ($item->images as $image)
                     <div class="swiper-slide">
                         <img src={{ asset('/images/' . $image)}}>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -49,8 +50,13 @@ class User extends Authenticatable
      * @param $value
      * @return string
      */
-    public function setPasswordAttribute($value)
+    public function setPasswordAttribute($value): string
     {
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function announcements(): HasMany
+    {
+        return $this->hasMany(Announcement::class, 'user_id', 'id');
     }
 }
