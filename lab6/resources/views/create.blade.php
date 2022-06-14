@@ -2,17 +2,31 @@
 
 @section('container')
 <div class="announcment-creation-wrapper">
+
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form class="form" action="{{ route('store.perform') }}" method="post">
         @csrf
 
         <div class="form__group field">
-            <input type="input" class="form__field" placeholder="Заголовок оголошення" name="name" id='name'
+            <input type="input" class="form__field" placeholder="Заголовок оголошення" name="title" id='name'
                    required />
             <label for="name" class="form__label">Заголовок оголошення</label>
         </div>
 
         <div class="form__group field">
-            <input type="input" class="form__field big" placeholder="Опис оголошення" name="description" id="description"></textarea>
+            <textarea type="input" class="form__field big" placeholder="Опис оголошення" required
+                      name="description" id="description">
+            </textarea>
             <label for="name" class="form__label">Опис оголошення</label>
         </div>
 
@@ -28,8 +42,8 @@
         </div>
 
         <div class="form__group field file">
-            <input type="file" class="file__field" placeholder="Дата та час прибрання" name="file" id='file'
-                   data-multiple-caption="{count} files selected" multiple required />
+            <input type="file" class="file__field" placeholder="Дата та час прибрання" name="images[]" id='file'
+                   data-multiple-caption="{count} files selected" multiple />
             <label for="file" class="file__label" >Завантажте фото сміття</label>
         </div>
 
@@ -38,5 +52,5 @@
         </div>
     </form>
 </div>
-    <script src="frontend/js/files.js"></script>
+    <script src="../js/files.js"></script>
 @endsection

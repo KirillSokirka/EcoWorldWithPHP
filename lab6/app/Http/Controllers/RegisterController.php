@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use http\Client\Response;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 
@@ -13,7 +13,7 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(): \Illuminate\Http\Response
     {
         return view('auth.register');
     }
@@ -25,7 +25,7 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function register(RegisterRequest $request)
+    public function register(RegisterRequest $request): Response
     {
         $user = User::create($request->validated());
 

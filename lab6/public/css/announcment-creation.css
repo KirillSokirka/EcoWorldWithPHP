@@ -148,7 +148,6 @@
 
 .file__field + .file__label {
   font-size: 1.1em;
-  border-radius: 5px;
   display: flex;
   background: rgba(147, 209, 191, 0.3);
   width: 100%;
@@ -168,6 +167,7 @@
   color: rgba(93, 95, 101, 0.7);
   background-color: rgba(147, 209, 191, 0.7);
   font-family: 'Comfortaa', sans-serif;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {

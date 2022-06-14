@@ -2,10 +2,12 @@
 
 namespace App\Repositories;
 
+use App\DTOs\AnnouncementCreate;
 use App\DTOs\AnnouncementHome;
 use App\DTOs\AnnouncementInfo;
 use App\Models\Announcement;
 use App\Models\Announcement as AnnouncementAlias;
+use App\Models\Image;
 use App\Repositories\Abstract\IAnnouncementRepository;
 
 class AnnouncementRepository implements IAnnouncementRepository
@@ -60,9 +62,16 @@ class AnnouncementRepository implements IAnnouncementRepository
         return $element;
     }
 
-    public function Create(AnnouncementAlias $item)
+    public function Create(AnnouncementCreate $item)
     {
-        // TODO: Implement Create() method.
+        $announcement = new Announcement();
+        $announcement->title = $item->title;
+        $announcement->description = $item->description;
+        $announcement->location = $item->location;
+        $announcement->date = \DateTime::createFromFormat("d.m.Y G:i", $item->date);
+        $announcement->author_id = $item->author_id;
+        $announcement->save();
+        $this->processImages($item);
     }
 
     public function Update(AnnouncementAlias $item)
@@ -73,5 +82,29 @@ class AnnouncementRepository implements IAnnouncementRepository
     public function Delete(int $id)
     {
         // TODO: Implement Delete() method.
+    }
+
+    private function processImages(AnnouncementCreate $item)
+    {
+        $announcement = Announcement
+            ::where('title', '=', $item->title)->first();
+
+        $images = array();
+        foreach ($item->images as $i) {
+            $img = new Image();
+            $img->announcement_id = $announcement->id;
+            $img->created_at = NOW();
+            $img->updated_at = NOW();
+            if (isset($i)) {
+                $filename = $i->getClientOriginalName();
+                $i->move(public_path().'/images/', $filename);;
+                $img->url = $filename;
+            }
+            $images[] = $img;
+        }
+
+        foreach ($images as $img) {
+            $img->save();
+        }
     }
 }
