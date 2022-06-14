@@ -3,7 +3,6 @@ const signInbutton = document.querySelector("#signIn-btn"),
     signInModal = document.querySelector("#signIn-modal"),
     signUpModal = document.querySelector("#signUp-modal");
 
-console.log('bebra');
 if (signUpModal !== null && signInModal !== null) {
     signUpModal.querySelector(".close").onclick = () => {
         signUpModal.style.display = "none";

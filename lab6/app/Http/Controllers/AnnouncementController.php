@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\DTOs\AnnouncementHome;
 use App\Repositories\Abstract\IAnnouncementRepository;
 use App\Repositories\AnnouncementRepository;
 use Illuminate\Routing\Controller as BaseController;

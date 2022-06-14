@@ -1,12 +1,11 @@
 const area = document.querySelector(".annoumcments-area"),
     button = area.querySelector(".show-more-btn");
 
-
 const placeAnnouncements = async () => {
 
     let data = [];
     try {
-        data = await axios.get('/EcoWorldWithPHP/EcoworldOnLaravel/public/announcements')
+        data = await axios.get('/EcoWorldWithPHP/lab6/public/announcements')
     }
     catch (error) {
         console.log(error);
@@ -15,11 +14,11 @@ const placeAnnouncements = async () => {
     let rows = []
 
     if (window.innerWidth <= 550) {
-        rows = configureAnnouncementsOnScreen(2, data.data);
+        rows = configureAnnouncementsOnScreen(2, data.data.data);
     } else if (window.innerWidth > 550 && window.innerWidth <= 800) {
-        rows = configureAnnouncementsOnScreen(3, data.data);
+        rows = configureAnnouncementsOnScreen(3, data.data.data);
     } else {
-        rows = configureAnnouncementsOnScreen(4, data.data);
+        rows = configureAnnouncementsOnScreen(4, data.data.data);
     }
 
     const elements = area.querySelectorAll(".annoumcment-row");
@@ -29,8 +28,11 @@ const placeAnnouncements = async () => {
     })
 
     let nonDisplayedRows = selectNonDisplayedRows();
+
     if (nonDisplayedRows.length !== 0) {
         button.style.display = 'flex';
+    } else {
+        button.style.display = 'none';
     }
 }
 
@@ -48,10 +50,10 @@ function configureAnnouncementsOnScreen(size, announcements) {
         rows[rowCount] += ` <div class="annoumcment-block">
                                 <div class="image-part">
                                     <a href='announcements/${item.id}' >
-                                    <img src='images/${item.imagesUrl[0]}'></a>
+                                    <img src='images/${item.images[0]}'></a>
                                     <img class="heart-image">
                                     <div class="person-info">
-                                        <p>${item.personCount}</p>
+                                        <p>${item.likeCount}</p>
                                         <img class="person-image">
                                     </div>
                                 </div>

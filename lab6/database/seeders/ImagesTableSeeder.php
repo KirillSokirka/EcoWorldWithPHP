@@ -26,5 +26,10 @@ class ImagesTableSeeder extends Seeder
             'created_at' => NOW(),
             'updated_at' => NOW()
         ]);
+        \DB::table('images')->insert([
+            'announcement_id' => 2,
+            'created_at' => NOW(),
+            'updated_at' => NOW()
+        ]);
     }
 }
