@@ -15,7 +15,7 @@ class LoginController extends Controller
      */
     public function show()
     {
-        return view('auth.login');
+        return view('auth.login-home');
     }
 
     /**
@@ -30,7 +30,7 @@ class LoginController extends Controller
         $credentials = $request->getCredentials();
 
         if(!Auth::validate($credentials)):
-            return redirect()->to('login')
+            return redirect()->to('/login')
                 ->withErrors(trans('auth.failed'));
         endif;
 

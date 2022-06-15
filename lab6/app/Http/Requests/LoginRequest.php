@@ -8,6 +8,13 @@ use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 class LoginRequest extends FormRequest
 {
     /**
+     * The URI that users should be redirected to if validation fails.
+     *
+     * @var string
+     */
+    protected $redirect = '/login';
+
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool

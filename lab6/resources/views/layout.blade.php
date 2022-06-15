@@ -44,7 +44,7 @@
         @endauth
     </div>
     <div class="mobile-menu">
-        <a href="{{url('/home/mobile')}}">
+        <a href="{{url('/mobile')}}">
             <img class="menu-button" alt="Menu">
         </a>
     </div>

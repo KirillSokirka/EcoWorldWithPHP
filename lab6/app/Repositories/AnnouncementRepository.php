@@ -107,20 +107,18 @@ class AnnouncementRepository implements IAnnouncementRepository
 
     private function processImages(AnnouncementCreate $item)
     {
-        $images = array();
-        foreach ($item->images as $i) {
-            $img = new Image();
-            if (isset($i)) {
+        $announcement = Announcement::where('title', '=', $item->title)->first();
+        if (isset($item->images->first)) {
+            foreach ($item->images as $i) {
+                $img = new Image();
                 $filename = $i->getClientOriginalName();
                 $i->move(public_path().'/images/', $filename);;
                 $img->url = $filename;
+                $img->save();
+                $announcement->images()->attach($img);
             }
-            $images[] = $img;
-        }
-
-        $announcement = Announcement::where('title', '=', $item->title)->first();
-        foreach ($images as $img) {
-            $img->save();
+        } else {
+            $img = Image::all()->where('url', 'default-rubbish.jpg')->first();
             $announcement->images()->attach($img);
         }
     }
