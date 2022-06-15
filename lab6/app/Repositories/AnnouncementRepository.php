@@ -17,7 +17,28 @@ class AnnouncementRepository implements IAnnouncementRepository
      */
     public function GetAll() : array
     {
-        $announcements = Announcement::with('images')->get();
+        $announcements = Announcement::all();
+        $announcementsDtos = array();
+        foreach ($announcements as $announcement) {
+            $images = array();
+            foreach ($announcement->images as $image) {
+                $images[] = $image->url;
+            }
+            $announcementsDtos[] = new AnnouncementHome(
+                title: $announcement->title,
+                id: $announcement->id,
+                location: $announcement->location,
+                date: date('d.m.Y G:i', strtotime($announcement->date)),
+                images: $images,
+                likeCount: $announcement->like_count
+            );
+        }
+        return $announcementsDtos;
+    }
+
+    public function GetUserAnnouncement(int $user_id): array
+    {
+        $announcements = Announcement::all()->where('author_id', $user_id);
         $announcementsDtos = array();
         foreach ($announcements as $announcement) {
             $images = array();
@@ -41,7 +62,7 @@ class AnnouncementRepository implements IAnnouncementRepository
      */
     public function Get(int $id) : AnnouncementInfo
     {
-        $announcement = Announcement::with('images', 'author')->find($id);
+        $announcement = Announcement::with( 'author')->find($id);
         $element = null;
         if (isset($announcement)) {
             $images = array();
@@ -86,15 +107,9 @@ class AnnouncementRepository implements IAnnouncementRepository
 
     private function processImages(AnnouncementCreate $item)
     {
-        $announcement = Announcement
-            ::where('title', '=', $item->title)->first();
-
         $images = array();
         foreach ($item->images as $i) {
             $img = new Image();
-            $img->announcement_id = $announcement->id;
-            $img->created_at = NOW();
-            $img->updated_at = NOW();
             if (isset($i)) {
                 $filename = $i->getClientOriginalName();
                 $i->move(public_path().'/images/', $filename);;
@@ -103,8 +118,10 @@ class AnnouncementRepository implements IAnnouncementRepository
             $images[] = $img;
         }
 
+        $announcement = Announcement::where('title', '=', $item->title)->first();
         foreach ($images as $img) {
             $img->save();
+            $announcement->images()->attach($img);
         }
     }
 }

@@ -32,7 +32,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 Route::get('/', function () { return view('home'); });
 Route::get('/mobile', function () { return view('mobile-menu'); });
 Route::get('/announcements', [AnnouncementController::class, 'index']);
+Route::get('/announcements/user/{id}', [AnnouncementController::class, 'user_announcements']);
 Route::get('/announcements/create/', [AnnouncementController::class, 'create'])->name('create.perform');
 Route::post('/announcements/store/', [AnnouncementController::class, 'store'])->name('store.perform');
 Route::get('/announcements/{id}', [AnnouncementController::class, 'show'])->name('show.perform');
-Route::get('/my-announcements', [AnnouncementController::class, 'myAnnouncements'])->name('myAnnouncements');
+Route::get('/announcement/by-user', [AnnouncementController::class, 'byUser'])
+    ->name('user-announcement.perform');

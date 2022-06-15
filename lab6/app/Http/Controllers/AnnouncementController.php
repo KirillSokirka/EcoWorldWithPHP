@@ -9,12 +9,12 @@ use App\Repositories\AnnouncementRepository;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
-function getAllImages(AnnouncementStoreRequest $request) {
+function getAllImages($validated) {
 
     $files = array();
-    if($request->hasfile('images'))
+    if(isset($validated['images']))
     {
-        foreach($request->file('images') as $image)
+        foreach($validated['images'] as $image)
         {
             $files[] = $image;
         }
@@ -63,15 +63,26 @@ class AnnouncementController extends BaseController
             description: $validated['description'],
             location: $validated['location'],
             date: date('d.m.Y G:i', strtotime($validated['date'])),
-            images: getAllImages($request),
+            images: getAllImages($validated),
             author_id: $author_id
         );
         $this->repository->Create($dto);
+        return redirect('/');
     }
 
-    public function myAnnouncements()
+    public function user_announcements($id)
     {
-
+        return response()->json([
+            'data' => $this->repository->GetUserAnnouncement($id)
+        ]);
     }
 
+    public function byUser() {
+        if (!Auth::check())
+            return redirect('/');
+        else {
+            $id = Auth::id();
+            return view('user_announcement', compact('id'));
+        }
+    }
 }

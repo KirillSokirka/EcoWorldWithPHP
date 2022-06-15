@@ -8,13 +8,20 @@
   height: 100%;
   display: flex;
   background-color: rgba(147, 209, 191, 0.15);
+    flex-direction: column;
+}
+
+.announcment-creation-wrapper .input_errors {
+    margin-top: 2em;
+    margin-left: 1.5em;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 .announcment-creation-wrapper .form {
   display: flex;
   flex-direction: column;
-  margin-top: 2em;
   margin-left: 1.5em;
+    margin-top: 1.5em;
 }
 
 .form__group {
@@ -34,7 +41,6 @@
   border-bottom: 2px solid;
   outline: 0;
   font-size: 1em;
-  width: 100%;
   color: rgba(0, 0, 0, 0.5);
   padding: 7px 11em 7px 5px;
   background: rgba(147, 209, 191, 0.3);

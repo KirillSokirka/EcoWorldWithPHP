@@ -4,8 +4,15 @@ const area = document.querySelector(".annoumcments-area"),
 const placeAnnouncements = async () => {
 
     let data = [];
+    let imageUrl = 'images/'
     try {
-        data = await axios.get('/EcoWorldWithPHP/lab6/public/announcements')
+        if (area.getAttribute('data') !== null) {
+            id = area.getAttribute('data');
+            data = await axios.get('/EcoWorldWithPHP/lab6/public/announcements/user/' + id)
+            imageUrl = '../images/'
+        } else {
+            data = await axios.get('/EcoWorldWithPHP/lab6/public/announcements/')
+        }
     }
     catch (error) {
         console.log(error);
@@ -14,11 +21,11 @@ const placeAnnouncements = async () => {
     let rows = []
 
     if (window.innerWidth <= 550) {
-        rows = configureAnnouncementsOnScreen(2, data.data.data);
+        rows = configureAnnouncementsOnScreen(2, data.data.data, imageUrl);
     } else if (window.innerWidth > 550 && window.innerWidth <= 800) {
-        rows = configureAnnouncementsOnScreen(3, data.data.data);
+        rows = configureAnnouncementsOnScreen(3, data.data.data, imageUrl);
     } else {
-        rows = configureAnnouncementsOnScreen(4, data.data.data);
+        rows = configureAnnouncementsOnScreen(4, data.data.data, imageUrl);
     }
 
     const elements = area.querySelectorAll(".annoumcment-row");
@@ -31,12 +38,10 @@ const placeAnnouncements = async () => {
 
     if (nonDisplayedRows.length !== 0) {
         button.style.display = 'flex';
-    } else {
-        button.style.display = 'none';
     }
 }
 
-function configureAnnouncementsOnScreen(size, announcements) {
+function configureAnnouncementsOnScreen(size, announcements, imageUrl) {
     let rows = [];
     let count = 0, rowCount = 0;
     announcements.forEach(item => {
@@ -50,7 +55,7 @@ function configureAnnouncementsOnScreen(size, announcements) {
         rows[rowCount] += ` <div class="annoumcment-block">
                                 <div class="image-part">
                                     <a href='announcements/${item.id}' >
-                                    <img src='images/${item.images[0]}'></a>
+                                    <img src='${imageUrl + item.images[0]}'></a>
                                     <img class="heart-image">
                                     <div class="person-info">
                                         <p>${item.likeCount}</p>

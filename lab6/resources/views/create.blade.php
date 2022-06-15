@@ -4,8 +4,8 @@
 <div class="announcment-creation-wrapper">
 
     @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <div class="input_errors">
+            There were some problems with your input.
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form class="form" action="{{ route('store.perform') }}" method="post">
+    <form class="form" action="{{ route('store.perform') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form__group field">
@@ -42,8 +42,7 @@
         </div>
 
         <div class="form__group field file">
-            <input type="file" class="file__field" placeholder="Дата та час прибрання" name="images[]" id='file'
-                   data-multiple-caption="{count} files selected" multiple />
+            <input type="file" class="file__field" name="images[]" multiple/>
             <label for="file" class="file__label" >Завантажте фото сміття</label>
         </div>
 
@@ -52,5 +51,6 @@
         </div>
     </form>
 </div>
-    <script src="../js/files.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="../js/files.js"></script>
 @endsection

@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Image extends Model
 {
-    public function announcements(): BelongsTo
+    public function announcements(): BelongsToMany
     {
-        return $this->belongsTo(Announcement::class);
+        return $this->belongsToMany(Announcement::class);
     }
 }

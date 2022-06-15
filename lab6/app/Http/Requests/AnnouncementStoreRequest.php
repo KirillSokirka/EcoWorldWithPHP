@@ -24,12 +24,12 @@ class AnnouncementStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:100',
+            'title' => 'required|unique:announcements,title|max:100',
             'description' => 'required|max:255',
             'location' => 'required|max:100',
             'date' => 'required|date',
             'images' => 'nullable',
-            'images.*' => 'nullable',
+            'images.*' => 'nullable|image',
         ];
     }
 }

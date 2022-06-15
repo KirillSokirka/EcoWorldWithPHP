@@ -15,19 +15,11 @@ class ImagesTableSeeder extends Seeder
     public function run()
     {
         \DB::table('images')->insert([
-            'announcement_id' => 1,
             'url' => 'poluted-river.png',
             'created_at' => NOW(),
             'updated_at' => NOW()
         ]);
         \DB::table('images')->insert([
-            'announcement_id' => 1,
-            'url' => 'poluted-river.png',
-            'created_at' => NOW(),
-            'updated_at' => NOW()
-        ]);
-        \DB::table('images')->insert([
-            'announcement_id' => 2,
             'created_at' => NOW(),
             'updated_at' => NOW()
         ]);

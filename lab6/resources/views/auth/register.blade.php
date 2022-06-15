@@ -2,6 +2,7 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <p>Вітаємо!</p>
+
         <form method="post" action="{{ route('register.perform') }}" id="form">
             @csrf
             <input class="info-input" name="email" value="{{ old('email') }}"

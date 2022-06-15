@@ -26,7 +26,7 @@
                 <ul class="dropdown" aria-label="submenu">
                     <li><a href="{{ route('create.perform') }}">Створити оголошення</a></li>
                     <hr>
-                    <li><a href="{{ route('myAnnouncements') }}">Мої оголошення</a></li>
+                    <li><a href="{{ route('user-announcement.perform') }}">Мої оголошення</a></li>
                     <li><a href="#">Вподобані оголошення</a></li>
                     <hr>
                     <li><a href="{{ route('logout.perform') }}">Вихід</a></li>
@@ -60,6 +60,5 @@
     <div>EcoWorld 2022</div>
 </footer>
 </body>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/auth.js') }}"></script>
 </html>
